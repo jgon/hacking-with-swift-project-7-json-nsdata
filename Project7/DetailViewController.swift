@@ -15,6 +15,12 @@ class DetailViewController: UIViewController {
     var webView: UIWebView!
     var detailItem: [String: String]!
 
+    override func loadView() {
+        // Replacing the detail view content by a UIWebView.
+        webView = UIWebView()
+        view = webView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,11 +39,6 @@ class DetailViewController: UIViewController {
             html += "</html>"
             webView.loadHTMLString(html, baseURL: nil)
         }
-    }
-    
-    override func loadView() {
-        webView = UIWebView()
-        view = webView
     }
 }
 
