@@ -37,7 +37,8 @@ class DetailViewController: UIViewController {
             html += body
             html += "</body>"
             html += "</html>"
-            webView.loadHTMLString(html, baseURL: nil)
+            let newHtml = html.stringByReplacingOccurrencesOfString("\n", withString: "<br>")
+            webView.loadHTMLString(newHtml, baseURL: nil)
         }
     }
 }
